@@ -16,9 +16,9 @@ public class GP7
         // Get a collection from the database
         MongoCollection<Document> collection = database.getCollection("test");
         // Create a document to store
-        Document doc = new Document("name", "Kevin Chalmers")
-                .append("class", "Software Engineering Methods")
-                .append("year", "2018/19")
+        Document doc = new Document("name", "Group7")
+                .append("class", "Computer Science")
+                .append("year", "2020/21")
                 .append("result", new Document("CW", 95).append("EX", 85));
         // Add document to collection
         collection.insertOne(doc);
