@@ -1,5 +1,5 @@
 package com.napier.gp7;
-
+//import Mongo Package
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
@@ -7,6 +7,7 @@ import org.bson.Document;
 
 public class GP7
 {
+    //Main Function
     public static void main(String[] args)
     {
         // Connect to MongoDB
