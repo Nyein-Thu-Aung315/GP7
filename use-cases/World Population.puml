@@ -1,5 +1,5 @@
 @startuml
-
+left to right direction
 actor User as "User"
 
 rectangle "World Population" {
@@ -26,15 +26,16 @@ rectangle "World Population" {
 
     usecase UC11 as "Display all cities information in a
                     continent organized by largest population to smallest."
-    User - UC4
-    User - UC5
-    User - UC6
-    User - UC7
-    User - UC8
-    User - UC9
-    User - UC10
-    User - UC11
+    User ---> UC4
+    User ---> UC5
+    User ---> UC6
+    User ---> UC7
+    User ---> UC8
+    User ---> UC9
+    User ---> UC10
+    User ---> UC11
 
 }
 
 @enduml
+
