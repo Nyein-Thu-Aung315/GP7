@@ -5,4 +5,5 @@ public class City {
     public String country;
     public String district;
     public int population;
+    public String continent;
 }
