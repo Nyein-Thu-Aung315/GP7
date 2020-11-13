@@ -14,6 +14,7 @@ public class GP7
         a.connect();
 
         //Print The list of Country Order by DESC
+        System.out.println("Country list in World order by largest population to smallest");
         ArrayList<Country> country = a.CountryDESC();
         a.printCountryDEST(country);
 
@@ -450,11 +451,6 @@ public class GP7
         {
             // Create an SQL statement
             Statement stmt = con.createStatement();
-            // Create string for SQL statement
-//            String clist = "SELECT Code FROM country where Continent='Asia'";
-//            //Execute SQL statement
-//            ResultSet code = stmt.executeQuery(clist);
-//            System.out.println(code);
             //Create String for SQL statement1
             String regionlist = "SELECT city.Name, city.CountryCode, city.District, city.Population,country.Code, country.Continent FROM city,country Where city.CountryCode = country.code and country.Continent = 'Asia' ORDER by Population DESC";
             // Execute SQL statement1
