@@ -141,12 +141,12 @@ public class GP7
             while (rset.next())
             {
                 Country cntry = new Country();
-                cntry.code = rset.getString("Code");
-                cntry.continent = rset.getString("Continent");
-                cntry.name = rset.getString("Name");
-                cntry.region = rset.getString("Region");
-                cntry.population = rset.getInt("Population");
-                cntry.capital = rset.getInt("Capital");
+                cntry.setCode(rset.getString("Code"));
+                cntry.setContinent(rset.getString("Continent"));
+                cntry.setName(rset.getString("Name"));
+                cntry.setRegion(rset.getString("Region"));
+                cntry.setPopulation(rset.getInt("Population"));
+                cntry.setCapital(rset.getInt("Capital"));
                 Country.add(cntry);
             }
             return Country;
@@ -164,7 +164,7 @@ public class GP7
         for (Country emp : Country) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s %-65s",
-                            emp.population, emp.code, emp.name, emp.continent, emp.region, emp.capital);
+                            emp.getPopulation(), emp.getCode(), emp.getName(), emp.getContinent(), emp.getRegion(), emp.getCapital());
             System.out.println(emp_string);
         }
     }
@@ -187,12 +187,12 @@ public class GP7
             while (rset.next())
             {
                 Country cont = new Country();
-                cont.code = rset.getString("Code");
-                cont.continent = rset.getString("Continent");
-                cont.name = rset.getString("Name");
-                cont.region = rset.getString("Region");
-                cont.population = rset.getInt("Population");
-                cont.capital = rset.getInt("Capital");
+                cont.setCode(rset.getString("Code"));
+                cont.setContinent(rset.getString("Continent"));
+                cont.setName(rset.getString("Name"));
+                cont.setRegion(rset.getString("Region"));
+                cont.setPopulation(rset.getInt("Population"));
+                cont.setCapital(rset.getInt("Capital"));
                 cty.add(cont);
             }
             return cty;
@@ -210,7 +210,7 @@ public class GP7
         for (Country emp : Country) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s %-65s",
-                            emp.population, emp.code, emp.name, emp.continent, emp.region, emp.capital);
+                            emp.getPopulation(), emp.getCode(), emp.getName(), emp.getContinent(), emp.getRegion(), emp.getCapital());
             System.out.println(emp_string);
         }
     }
@@ -233,12 +233,12 @@ public class GP7
             while (rset.next())
             {
                 Country cntry = new Country();
-                cntry.code = rset.getString("Code");
-                cntry.continent = rset.getString("Continent");
-                cntry.name = rset.getString("Name");
-                cntry.region = rset.getString("Region");
-                cntry.population = rset.getInt("Population");
-                cntry.capital = rset.getInt("Capital");
+                cntry.setCode(rset.getString("Code"));
+                cntry.setContinent(rset.getString("Continent"));
+                cntry.setName(rset.getString("Name"));
+                cntry.setRegion(rset.getString("Region"));
+                cntry.setPopulation(rset.getInt("Population"));
+                cntry.setCapital(rset.getInt("Capital"));
                 Country.add(cntry);
             }
             return Country;
@@ -256,7 +256,7 @@ public class GP7
         for (Country emp : Country) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s %-65s",
-                            emp.population, emp.code, emp.name, emp.continent, emp.region, emp.capital);
+                            emp.getPopulation(), emp.getCode(), emp.getName(), emp.getContinent(), emp.getRegion(), emp.getCapital());
             System.out.println(emp_string);
         }
     }
@@ -279,12 +279,12 @@ public class GP7
             while (rset.next())
             {
                 Country cntry = new Country();
-                cntry.code = rset.getString("Code");
-                cntry.continent = rset.getString("Continent");
-                cntry.name = rset.getString("Name");
-                cntry.region = rset.getString("Region");
-                cntry.population = rset.getInt("Population");
-                cntry.capital = rset.getInt("Capital");
+                cntry.setCode(rset.getString("Code"));
+                cntry.setContinent(rset.getString("Continent"));
+                cntry.setName(rset.getString("Name"));
+                cntry.setRegion(rset.getString("Region"));
+                cntry.setPopulation(rset.getInt("Population"));
+                cntry.setCapital(rset.getInt("Capital"));
                 Country.add(cntry);
             }
             return Country;
@@ -302,7 +302,7 @@ public class GP7
         for (Country emp : Country1) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s %-65s",
-                            emp.population, emp.code, emp.name, emp.continent, emp.region, emp.capital);
+                            emp.getPopulation(), emp.getCode(), emp.getName(), emp.getContinent(), emp.getRegion(), emp.getCapital());
             System.out.println(emp_string);
         }
     }
@@ -325,12 +325,12 @@ public class GP7
             while (rset.next())
             {
                 Country cntry = new Country();
-                cntry.code = rset.getString("Code");
-                cntry.continent = rset.getString("Continent");
-                cntry.name = rset.getString("Name");
-                cntry.region = rset.getString("Region");
-                cntry.population = rset.getInt("Population");
-                cntry.capital = rset.getInt("Capital");
+                cntry.setCode(rset.getString("Code"));
+                cntry.setContinent(rset.getString("Continent"));
+                cntry.setName(rset.getString("Name"));
+                cntry.setRegion(rset.getString("Region"));
+                cntry.setPopulation(rset.getInt("Population"));
+                cntry.setCapital(rset.getInt("Capital"));
                 Country.add(cntry);
             }
             return Country;
@@ -348,7 +348,7 @@ public class GP7
         for (Country emp : Country2) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s %-65s",
-                            emp.population, emp.code, emp.name, emp.continent, emp.region, emp.capital);
+                            emp.getPopulation(), emp.getCode(), emp.getName(), emp.getContinent(), emp.getRegion(), emp.getCapital());
             System.out.println(emp_string);
         }
     }
@@ -370,12 +370,12 @@ public class GP7
             while (rset.next())
             {
                 Country cntry = new Country();
-                cntry.code = rset.getString("Code");
-                cntry.continent = rset.getString("Continent");
-                cntry.name = rset.getString("Name");
-                cntry.region = rset.getString("Region");
-                cntry.population = rset.getInt("Population");
-                cntry.capital = rset.getInt("Capital");
+                cntry.setCode(rset.getString("Code"));
+                cntry.setContinent(rset.getString("Continent"));
+                cntry.setName(rset.getString("Name"));
+                cntry.setRegion(rset.getString("Region"));
+                cntry.setPopulation(rset.getInt("Population"));
+                cntry.setCapital(rset.getInt("Capital"));
                 Country.add(cntry);
             }
             return Country;
@@ -393,7 +393,7 @@ public class GP7
         for (Country emp : Country3) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s %-65s",
-                            emp.population, emp.code, emp.name, emp.continent, emp.region, emp.capital);
+                            emp.getPopulation(), emp.getCode(), emp.getName(), emp.getContinent(), emp.getRegion(), emp.getCapital());
             System.out.println(emp_string);
         }
     }
@@ -416,10 +416,10 @@ public class GP7
             while (rset.next())
             {
                 City city = new City();
-                city.district = rset.getString("District");
-                city.name = rset.getString("Name");
-                city.population = rset.getInt("Population");
-                city.country = rset.getString("CountryCode");
+                city.setDistrict(rset.getString("District"));
+                city.setName(rset.getString("Name"));
+                city.setPopulation(rset.getInt("Population"));
+                city.setCountry(rset.getString("CountryCode"));
                 City.add(city);
             }
             return City;
@@ -437,7 +437,7 @@ public class GP7
         for (City emp : City1) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s",
-                            emp.population, emp.name, emp.district, emp.country);
+                            emp.getPopulation(), emp.getName(), emp.getDistrict(), emp.getCountry());
             System.out.println(emp_string);
         }
     }
@@ -464,11 +464,11 @@ public class GP7
             while (rset.next())
             {
                 City city = new City();
-                city.district = rset.getString("city.District");
-                city.name = rset.getString("city.Name");
-                city.population = rset.getInt("city.Population");
-                city.country = rset.getString("city.CountryCode");
-                city.continent = rset.getString("country.Continent");
+                city.setDistrict(rset.getString("District"));
+                city.setName(rset.getString("Name"));
+                city.setPopulation(rset.getInt("Population"));
+                city.setCountry(rset.getString("CountryCode"));
+                city.setContinent(rset.getString("country.Continent"));
                 City.add(city);
             }
             return City;
@@ -486,7 +486,7 @@ public class GP7
         for (City emp : City1) {
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s",
-                            emp.population, emp.name, emp.district, emp.country, emp.continent);
+                            emp.getPopulation(), emp.getName(), emp.getDistrict(), emp.getCountry(), emp.getContinent());
             System.out.println(emp_string);
         }
     }
