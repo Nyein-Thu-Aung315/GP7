@@ -2,31 +2,39 @@
 
 actor User as "User"
 
-rectangle Database
-
 rectangle "World Population" {
-    usecase UC4 as "As a user, I can organized
-    the largest population
-    to smallest cities in the world."
+    usecase UC4 as "Display ALl countries information in the
+    world sorted by largest population to smallest."
 
-    usecase UC5 as "As a user, I can organized
-    largest population
-    to smallest countries in the world."
+    usecase UC5 as "Display ALl countries information in a
+                    continent sorted by largest population to smallest."
 
-    usecase UCa as "Print City list in
-    the world order
-    by largest population to smallest"
+    usecase UC6 as "Display ALl countries information in a
+                    region sorted by largest population to smallest."
 
-    usecase UCb as "Print Country list
-    in the world order
-    by largest population to smallest"
+    usecase UC7 as "Display top N countries information in the
+                    world organized by population."
 
+    usecase UC8 as "Display top N countries information in a
+                    continent organized by population."
+
+    usecase UC9 as "Display top N countries information in a
+                    region organized by population."
+
+    usecase UC10 as "Display all cities information in the
+                     world organized by largest population to smallest."
+
+    usecase UC11 as "Display all cities information in a
+                    continent organized by largest population to smallest."
     User - UC4
     User - UC5
-    UC4 ..> UCa : include
-    UC5 ..> UCb : include
-    UC4 - Database
-    UC5 - Database
+    User - UC6
+    User - UC7
+    User - UC8
+    User - UC9
+    User - UC10
+    User - UC11
+
 }
 
 @enduml
