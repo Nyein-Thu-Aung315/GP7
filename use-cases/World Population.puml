@@ -1,0 +1,32 @@
+@startuml
+
+actor User as "User"
+
+rectangle Database
+
+rectangle "World Population" {
+    usecase UC4 as "As a user, I can organized
+    the largest population
+    to smallest cities in the world."
+
+    usecase UC5 as "As a user, I can organized
+    largest population
+    to smallest countries in the world."
+
+    usecase UCa as "Print City list in
+    the world order
+    by largest population to smallest"
+
+    usecase UCb as "Print Country list
+    in the world order
+    by largest population to smallest"
+
+    User - UC4
+    User - UC5
+    UC4 ..> UCa : include
+    UC5 ..> UCb : include
+    UC4 - Database
+    UC5 - Database
+}
+
+@enduml
