@@ -857,7 +857,7 @@ public class GP7
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String citylist = "SELECT city.Name, city.CountryCode, city.District, city.Population,country.Code, country.Continent FROM city,country Where city.CountryCode = country.code and country.Name = 'Asia' ORDER by Population DESC Limit 10";
+            String citylist = "SELECT city.Name, city.CountryCode, city.District, city.Population,country.Code, country.Continent FROM city,country Where city.CountryCode = country.code and country.Name = 'Myanmar' ORDER by Population DESC Limit 10";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(citylist);
             // Extract employee information
