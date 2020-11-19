@@ -59,4 +59,36 @@ public class CodeTesting {
         group7.print_popucitylist_Country(Cities);
         System.out.println("\n-----*****------*****--------");
     }
+
+    //Function 11
+    @Test
+    void checkcitylist_district_Null(){
+        System.out.println("Null Testing\n");
+        group7.print_popucitylist_district(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkcityarray_district_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.print_popucitylist_district(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 12
+    @Test
+    void checkcitylist_world_Null(){
+        System.out.println("Null Testing\n");
+        group7.print_popucitylist_world(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkcityarray_world_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.print_popucitylist_world(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
 }

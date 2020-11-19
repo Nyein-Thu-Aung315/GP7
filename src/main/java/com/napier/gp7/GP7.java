@@ -675,10 +675,17 @@ public class GP7
     }
     public void print_popucitylist_district(ArrayList<City> City1)
     {
+        //Check null
+        if(City1 == null){
+            System.out.println("No City List information in District");
+            return;
+        }
         // Print header
         System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "Country Name", "continent","district" ));
         // Loop over all employees in the list
         for (City emp : City1) {
+            if (emp == null)
+                continue;
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s",
                             emp.getPopulation(), emp.getName(), emp.getCountry(),emp.getDistrict());
@@ -720,10 +727,17 @@ public class GP7
     }
     public void print_popucitylist_world(ArrayList<City> City1)
     {
+        //Check null
+        if(City1 == null){
+            System.out.println("No City List information in World");
+            return;
+        }
         // Print header
         System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "Country Name", "continent","district" ));
         // Loop over all employees in the list
         for (City emp : City1) {
+            if (emp == null)
+                continue;
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s",
                             emp.getPopulation(), emp.getName(), emp.getCountry(),emp.getDistrict());
