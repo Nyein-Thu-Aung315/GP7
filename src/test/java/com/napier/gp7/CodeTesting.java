@@ -91,4 +91,35 @@ public class CodeTesting {
         group7.print_popucitylist_world(Cities);
         System.out.println("\n-----*****------*****--------");
     }
+
+    //Function 13
+    @Test
+    void checkpopcitylist_continent_Null(){
+        System.out.println("Null Testing\n");
+        group7.print_populationcity_continent(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkpopcityarray_continent_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.print_populationcity_continent(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+    //Function 13
+    @Test
+    void checkpopcitylist_region_Null(){
+        System.out.println("Null Testing\n");
+        group7.print_populationcity_region(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkpopcityarray_region_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.print_populationcity_region(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
 }
