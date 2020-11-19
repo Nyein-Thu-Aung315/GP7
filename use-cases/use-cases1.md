@@ -27,14 +27,14 @@ User
 A request for world population information is sent to organization.
 
 ###Main Success Scenario
-1. Can provide World Population information for organization. 
-2. Can see the Continent Population for the countries by decending. 
-3. Can give the population information about the population in the region.
-4. Can see the top ten populated countries in the world.
-5. Can see the top ten populated countries in the continent.
-6. Can see the top ten populated countries in the region.
-7. Can see the city in the world organized by largest population to smallest.
-8. Can see the city in the continent organized by largest population to smallest.
+1. Can see all the cities in the region organized by largest population to smallest.
+2. Can see all the cities in the country organized by largest population to smallest.
+3. Can see all the cities in the district organized by largest populaion to smallest.
+4. Can see the top ten populated cities in the world.
+5. Can see the top ten populated cities in the continent.
+6. Can see the top ten populated cities in the region.
+7. Can see the top ten populated cities in the country.
+8. Can see the top ten populated cities in the district.
 
 ###Extension
 Role does not exists.

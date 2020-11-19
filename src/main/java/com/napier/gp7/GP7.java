@@ -60,6 +60,18 @@ public class GP7
         ArrayList<City> popcity_continent = a.popcity_continent();
         a.print_popcity_continent(popcity_continent);
 
+        //Print Top 10 populated cities in the world
+        System.out.println("\n");
+        System.out.println("Top 10 Populated cities in the continent");
+        ArrayList<City> popcity_world = a.mostpopcity_world();
+        a.print_populationcity_continent(popcity_world);
+
+        //Print Top 10 populated cities in the world
+        System.out.println("\n");
+        System.out.println("Top 10 Populated cities in the region");
+        ArrayList<City> pcity_world = a.pcity_world();
+        a.print_populationcity_region(pcity_world);
+
         // Disconnect from database
         a.disconnect();
     }
@@ -483,6 +495,97 @@ public class GP7
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s %-60s",
                             emp.getPopulation(), emp.getName(), emp.getDistrict(), emp.getCountry(), emp.getContinent());
+            System.out.println(emp_string);
+        }
+    }
+    //End
+
+
+    //Function 13
+    public ArrayList<City> mostpopcity_world()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "SELECT city.Name, city.CountryCode, city.District, city.Population,country.Code, country.Continent FROM city,country Where city.CountryCode = country.code and country.Continent = 'Asia' ORDER by Population DESC Limit 10";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<City> City = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+//                city.setCode(rset.getString("Code"));
+                city.setContinent(rset.getString("Continent"));
+                city.setName(rset.getString("Name"));
+//                city.setRegion(rset.getString("Region"));
+                city.setPopulation(rset.getInt("Population"));
+                city.setDistrict(rset.getString("District"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void print_populationcity_continent(ArrayList<City> City1)
+    {
+        // Print header
+        System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "Country Name", "continent","district" ));
+        // Loop over all employees in the list
+        for (City emp : City1) {
+            String emp_string =
+                    String.format("%-10s %-30s %-45s %-55s",
+                            emp.getPopulation(), emp.getName(), emp.getContinent(),emp.getDistrict());
+            System.out.println(emp_string);
+        }
+    }
+    //End
+
+    //Function 14
+    public ArrayList<City> pcity_world()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "SELECT city.Name, city.CountryCode, city.District, city.Population,country.Code, country.Continent FROM city,country Where city.CountryCode = country.code and country.Region = 'Eastern Asia' ORDER by Population DESC Limit 10";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<City> City = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+//                city.setCode(rset.getString("Code"));
+                city.setContinent(rset.getString("Continent"));
+                city.setName(rset.getString("Name"));
+//                city.setRegion(rset.getString("Region"));
+                city.setPopulation(rset.getInt("Population"));
+                city.setDistrict(rset.getString("District"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void print_populationcity_region(ArrayList<City> City1)
+    {
+        // Print header
+        System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "Country Name", "continent","district" ));
+        // Loop over all employees in the list
+        for (City emp : City1) {
+            String emp_string =
+                    String.format("%-10s %-30s %-45s %-55s",
+                            emp.getPopulation(), emp.getName(), emp.getContinent(),emp.getDistrict());
             System.out.println(emp_string);
         }
     }
