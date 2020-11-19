@@ -70,7 +70,7 @@ public class GP7
         System.out.println("\n");
         System.out.println("City list in Eastern Asia order by largest population to smallest");
         ArrayList<City> popcity_region = a.pcity_region();
-        a.print_popucitylist_region(popcity_region);
+        a.print_popucitylist_Country(popcity_region);
 
         //Print populated countries in a District
         System.out.println("\n");
@@ -570,10 +570,18 @@ public class GP7
     }
     public void print_popucitylist_region(ArrayList<City> City1)
     {
+        // Check employees is not null
+        if (City1 == null)
+        {
+            System.out.println("No City Information!");
+            return;
+        }
         // Print header
         System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "Country Name", "continent","district" ));
         // Loop over all employees in the list
         for (City emp : City1) {
+            if (emp == null)
+                continue;
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s",
                             emp.getPopulation(), emp.getName(), emp.getContinent(),emp.getDistrict());
@@ -615,10 +623,17 @@ public class GP7
     }
     public void print_popucitylist_Country(ArrayList<City> City1)
     {
+        //Check null
+        if(City1 == null){
+            System.out.println("No City List information in China country");
+            return;
+        }
         // Print header
         System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "Country Name", "continent","district" ));
         // Loop over all employees in the list
         for (City emp : City1) {
+            if (emp == null)
+                continue;
             String emp_string =
                     String.format("%-10s %-30s %-45s %-55s",
                             emp.getPopulation(), emp.getName(), emp.getContinent(),emp.getDistrict());
