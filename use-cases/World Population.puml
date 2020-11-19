@@ -3,29 +3,57 @@ left to right direction
 actor User as "User"
 
 rectangle "World Population" {
-    usecase UC4 as "Display ALl countries information in the
+    usecase UC1 as "Display ALl countries information in the
     world sorted by largest population to smallest."
 
-    usecase UC5 as "Display ALl countries information in a
+    usecase UC2 as "Display ALl countries information in a
                     continent sorted by largest population to smallest."
 
-    usecase UC6 as "Display ALl countries information in a
+    usecase UC3 as "Display ALl countries information in a
                     region sorted by largest population to smallest."
 
-    usecase UC7 as "Display top N countries information in the
+    usecase UC4 as "Display top N countries information in the
                     world organized by population."
 
-    usecase UC8 as "Display top N countries information in a
+    usecase UC5 as "Display top N countries information in a
                     continent organized by population."
 
-    usecase UC9 as "Display top N countries information in a
+    usecase UC6 as "Display top N countries information in a
                     region organized by population."
 
-    usecase UC10 as "Display all cities information in the
+    usecase UC7 as "Display all cities information in the
                      world organized by largest population to smallest."
 
-    usecase UC11 as "Display all cities information in a
+    usecase UC8 as "Display all cities information in a
                     continent organized by largest population to smallest."
+
+    usecase UC9 as "Display all cities information in a
+                        region organized by largest population to smallest."
+
+    usecase UC10 as "Display all cities information in a
+                        country organized by largest population to smallest."
+
+    usecase UC11 as "Display all cities information in a
+                            district organized by largest population to smallest."
+
+    usecase UC12 as "Display The top N populated cities
+    in the world where N is provided by the user."
+
+    usecase UC13 as "Display The top N populated cities
+        in the continent where N is provided by the user."
+
+    usecase UC14 as "Display The top N populated cities
+        in the region where N is provided by the user."
+
+    usecase UC15 as "Display The top N populated cities
+        in the country where N is provided by the user."
+
+    usecase UC16 as "Display The top N populated cities
+        in the district where N is provided by the user."
+
+    User ---> UC1
+    User ---> UC2
+    User ---> UC3
     User ---> UC4
     User ---> UC5
     User ---> UC6
@@ -34,6 +62,11 @@ rectangle "World Population" {
     User ---> UC9
     User ---> UC10
     User ---> UC11
+    User ---> UC12
+    User ---> UC13
+    User ---> UC14
+    User ---> UC15
+    User ---> UC16
 
 }
 
