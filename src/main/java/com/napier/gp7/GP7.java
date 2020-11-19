@@ -78,14 +78,14 @@ public class GP7
         ArrayList<City> popcity_district = a.pcity_district();
         a.print_popucitylist_district(popcity_district);
 
-        //Print populated countries in a District
+        //Print populated countries in a World
         System.out.println("\n");
-        System.out.println("City list in a district order by largest population to smallest");
+        System.out.println("Top 10 populated cities in the world");
         ArrayList<City> popcity_world = a.pcitylist_world();
         a.print_popucitylist_world(popcity_world);
 
 
-        //Print Top 10 populated cities in the world
+        //Print Top 10 populated cities in the continent
         System.out.println("\n");
         System.out.println("Top 10 Populated cities in the continent");
         ArrayList<City> popcity_continent1= a.mostpopcity_world();
@@ -857,7 +857,7 @@ public class GP7
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String citylist = "SELECT city.Name, city.CountryCode, city.District, city.Population,country.Code, country.Continent FROM city,country Where city.CountryCode = country.code and country.Name = 'China' ORDER by Population DESC Limit 10";
+            String citylist = "SELECT city.Name, city.CountryCode, city.District, city.Population,country.Code, country.Continent FROM city,country Where city.CountryCode = country.code and country.Name = 'Asia' ORDER by Population DESC Limit 10";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(citylist);
             // Extract employee information
