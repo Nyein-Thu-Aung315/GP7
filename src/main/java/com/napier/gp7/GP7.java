@@ -11,7 +11,14 @@ public class GP7
         GP7 a = new GP7();
 
         // Connect to database
-        a.connect();
+        if (args.length < 1)
+        {
+            a.connect("localhost:3306");
+        }
+        else
+        {
+            a.connect(args[0]);
+        }
 
         //Print The list of Country Order by DESC
         System.out.println("Country list in World order by largest population to smallest");
@@ -120,12 +127,12 @@ public class GP7
     /**
      * Connect to the MySQL database.
      */
-    public void connect()
+    public void connect(String s)
     {
         try
         {
             // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         }
         catch (ClassNotFoundException e)
         {
@@ -133,16 +140,16 @@ public class GP7
             System.exit(-1);
         }
 
-        int retries = 100;
+        int retries = 10;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(3000);
+                Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + s + "/employees?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             }
