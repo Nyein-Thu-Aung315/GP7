@@ -22,10 +22,10 @@ jobs:
     - stage: unit tests
       install: skip
       jdk: oraclejdk11
-      script: mvn test -Dtest=com.napier.sem.CodeTesting
+      script: mvn test -Dtest=com.napier.gp7.CodeTesting
     - stage: integration tests
       jdk: oraclejdk11
-      script: mvn test -Dtest=com.napier.sem.AppIntegrationTest
+      script: mvn test -Dtest=com.napier.gp7.AppIntegrationTest
     - stage: deploy
       install: skip
       jdk: oraclejdk11
