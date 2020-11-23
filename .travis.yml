@@ -29,8 +29,6 @@ jobs:
     - stage: deploy
       install: skip
       jdk: oraclejdk11
-    - codecov:
-        token: 8809b484-78f2-41d2-a139-45786e1a1eaf
       script:
         - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
         - docker-compose up --abort-on-container-exit
