@@ -118,9 +118,6 @@ public class GP7
         ArrayList<City> popcitylistdistrict = a.pop_city_district();
         a.print_populationcity_District(popcitylistdistrict);
 
-//        ArrayList<Country> peopleList = a.peopleListCountry();
-//        a.printPeopleListCountry(peopleList);
-
         //Print Population of CapitalCity in the world
         System.out.println("\n");
         System.out.println("Population of CapitalCity in the world");
@@ -138,6 +135,12 @@ public class GP7
        System.out.println("Population of CapitalCity in the Continent");
        ArrayList<City> capCtyContinent = a.capCityContinent();
        a.printCapcityContinent(capCtyContinent);
+
+        //Print populated capital cities in a World
+        System.out.println("\n");
+        System.out.println("Top 10 populated Capitical Cities in the world");
+        ArrayList<City> popcapcity_world = a.popcapcity_world();
+        a.print_popcapcity_world(popcapcity_world);
 
        // ArrayList<Country> peopleList = a.peopleListCountry();
 //        a.printPeopleListCountry(peopleList);
@@ -1126,6 +1129,58 @@ public class GP7
         }
         // Print header
         System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "City Name", "Country Name","district" ));
+        // Loop over all employees in the list
+        for (City emp : City1) {
+            if (emp == null)
+                continue;
+            String emp_string =
+                    String.format("%-10s %-30s %-45s %-55s",
+                            emp.getPopulation(), emp.getName(), emp.getCountry(),emp.getDistrict());
+            System.out.println(emp_string);
+        }
+    }
+    //End
+
+    //Function 20
+    public ArrayList<City> popcapcity_world()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "Select city.Population,city.ID, city.Name, city.District, city.CountryCode, country.Capital from city,country where city.ID = country.Capital Order By city.Population DESC Limit 10";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<City> City = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+//                city.setCode(rset.getString("Code"));
+                city.setCountry(rset.getString("CountryCode"));
+                city.setName(rset.getString("Name"));
+//                city.setRegion(rset.getString("Region"));
+                city.setPopulation(rset.getInt("Population"));
+                city.setDistrict(rset.getString("District"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void print_popcapcity_world(ArrayList<City> City1)
+    {
+        //Check null
+        if(City1 == null){
+            System.out.println("No City List information in World");
+            return;
+        }
+        // Print header
+        System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "Country Name", "continent","district" ));
         // Loop over all employees in the list
         for (City emp : City1) {
             if (emp == null)
