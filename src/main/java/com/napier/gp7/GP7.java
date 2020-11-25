@@ -142,6 +142,12 @@ public class GP7
         ArrayList<City> popcapcity_world = a.popcapcity_world();
         a.print_popcapcity_world(popcapcity_world);
 
+        //Print populate capital cities in the continent
+        System.out.println("\n");
+        System.out.println("Top 10 populated Capitical Cities in the Continent");
+        ArrayList<City> popcapCtyContinent = a.popcapCityContinent();
+        a.printpopCapcityContinent(popcapCtyContinent);
+
        // ArrayList<Country> peopleList = a.peopleListCountry();
 //        a.printPeopleListCountry(peopleList);
 
@@ -1192,6 +1198,57 @@ public class GP7
         }
     }
     //End
+    //Function 21
+    public ArrayList<City> popcapCityContinent(){
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String citylist = "Select city.Population,city.ID, city.Name, city.District, city.CountryCode, country.Capital from city,country where city.ID = country.Capital and country.Continent = 'Europe' Order By city.Population DESC Limit 10 ";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(citylist);
+            // Extract employee information
+            ArrayList<City> City = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+//                city.setCode(rset.getString("Code"));
+                city.setCountry(rset.getString("CountryCode"));
+                city.setName(rset.getString("Name"));
+//                city.setRegion(rset.getString("Region"));
+                city.setPopulation(rset.getInt("Population"));
+                city.setDistrict(rset.getString("District"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void printpopCapcityContinent(ArrayList<City> City1)
+    {
+        //Check null
+        if(City1 == null) {
+            System.out.println("No Population City List information in Region");
+            return;
+        }
+        // Print header
+        System.out.println(String.format("%-10s %-30s %-45s %-55s", "Population", "City Name", "Country Name","district" ));
+        // Loop over all employees in the list
+        for (City emp : City1) {
+            if (emp == null)
+                continue;
+            String emp_string =
+                    String.format("%-10s %-30s %-45s %-55s",
+                            emp.getPopulation(), emp.getName(), emp.getCountry(),emp.getDistrict());
+            System.out.println(emp_string);
+        }
+    }
+    //End
+
 
     //    Function 23
 //    public ArrayList<Country> peopleListCountry(){
