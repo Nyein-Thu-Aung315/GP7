@@ -94,6 +94,15 @@ rectangle "World Population" {
     User ---> UC14
     User ---> UC15
     User ---> UC16
+    User ---> UC17
+    User ---> UC18
+    User ---> UC19
+    User ---> UC20
+    User ---> UC21
+    User ---> UC22
+    User ---> UC23
+    User ---> UC24
+    User ---> UC25
 
 }
 
