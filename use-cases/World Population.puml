@@ -51,6 +51,33 @@ rectangle "World Population" {
     usecase UC16 as "Display The top N populated cities
         in the district where N is provided by the user."
 
+    usecase UC17 as "Display All the capital cities in
+        the world organised by largest population to smallest."
+
+    usecase UC18 as "Display All the capital cities in
+        the continent organised by largest population to smallest."
+
+    usecase UC19 as "Display All the capital cities in
+        the region organised by largest population to smallest."
+
+    usecase UC20 as "Display The top N populated capital cities
+        in the world where N is provided by the user."
+
+    usecase UC21 as "Display The top N populated capital cities
+        in the continent where N is provided by the user."
+
+    usecase UC22 as "Display The top N populated capital cities
+        in the region where N is provided by the user."
+
+    usecase UC23 as "Display The population of people, people
+        living in cities, and people not living in cities in each continent."
+
+    usecase UC24 as "Display The population of people, people
+        living in cities, and people not living in cities in each region."
+
+    usecase UC25 as "Display The population of people, people
+        living in cities, and people not living in cities in each country."
+
     User ---> UC1
     User ---> UC2
     User ---> UC3
