@@ -82,7 +82,7 @@ public class AppIntegrationTest
         System.out.println("\n-----*****------*****--------");
     }
 
-    //Function 12
+    //Function 12.
     @Test
     void checkcitylist_world_Null(){
         System.out.println("Null Testing\n");
