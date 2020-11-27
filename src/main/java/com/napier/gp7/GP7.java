@@ -1103,7 +1103,8 @@ public class GP7
     }
     //End
 
-    //Function 19
+    //Function 19.
+    
     public ArrayList<City> capCityRegion(){
         try
         {
@@ -1154,7 +1155,8 @@ public class GP7
     }
     //End
 
-    //Function 20
+    //Function 20.
+    
     public ArrayList<City> popcapcity_world()
     {
         try
