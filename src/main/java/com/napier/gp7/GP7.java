@@ -120,19 +120,19 @@ public class GP7
 
         //Print Population of CapitalCity in the world
         System.out.println("\n");
-        System.out.println("Population of CapitalCity in the world");
+        System.out.println("Population of Capital Cities in the world");
         ArrayList<City> capitalCtyWorld = a.capitalCityWorld();
         a.printCapitalcityWorld(capitalCtyWorld);
 
         //Print Population of CapitalCity in the Region
         System.out.println("\n");
-        System.out.println("Population of CapitalCity in the Region");
+        System.out.println("Population of Capital Cities in the Region");
         ArrayList<City> capCtyRegion = a.capCityRegion();
         a.printCapcityRegion(capCtyRegion);
 
        //Print Population of CapitalCity in the Continent
        System.out.println("\n");
-       System.out.println("Population of CapitalCity in the Continent");
+       System.out.println("Population of Capital Cities in the Continent");
        ArrayList<City> capCtyContinent = a.capCityContinent();
        a.printCapcityContinent(capCtyContinent);
 
