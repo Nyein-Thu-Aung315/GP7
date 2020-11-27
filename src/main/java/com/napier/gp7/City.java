@@ -60,4 +60,28 @@ public class City {
         this.continent = newcode;
     }
     //end
+
+    //Create variable for continent
+    private long poplong;
+    //getter for populationlong;
+    public long getPopulationLong(long population) {
+        return poplong;
+    }
+    // Setter for Populationlong
+    public void setPopulationLong(long newcode) {
+        this.poplong = newcode;
+    }
+    //end
+
+    //Create variable for city population
+    private long ctyPopulation;
+    // Getter for city population
+    public long getCtyPopulation() {
+        return ctyPopulation;
+    }
+    // Setter for city population
+    public void setCtyPopulation(long newPop) {
+        this.ctyPopulation = newPop;
+    }
+    //end
 }

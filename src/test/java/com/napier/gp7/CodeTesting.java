@@ -137,19 +137,197 @@ public class CodeTesting {
         group7.print_populationcity_country(Cities);
         System.out.println("\n-----*****------*****--------");
     }
-    //Function 16
+
+    //Function 17
     @Test
-    void checkpopcitylist_district_Null(){
+    void checkpopCapitalCityWorld_Null(){
         System.out.println("Null Testing\n");
-        group7.print_populationcity_District(null);
+        group7.printCapitalcityWorld(null);
         System.out.println("\n-----*****------*****--------");
     }
     @Test
-    void checkpopcityarray_district_Null(){
+    void checkpopCapitalCityWoldArray_Null(){
         System.out.println("ArrayList Null Testing\n");
         ArrayList<City> Cities = new ArrayList<City>();
         Cities.add(null);
-        group7.print_populationcity_District(Cities);
+        group7.printCapitalcityWorld(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 18
+    @Test
+    void checkpopCapitalCityContinent_Null(){
+        System.out.println("Null Testing\n");
+        group7.printCapcityContinent(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkpopCapitalCityContinentArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.printCapcityContinent(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 19
+    @Test
+    void checkpopCapitalCityRegion_Null(){
+        System.out.println("Null Testing\n");
+        group7.printCapcityRegion(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkpopCapitalCityRegionArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.printCapcityRegion(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 20
+    @Test
+    void checkCapitalCityWorld_Null(){
+        System.out.println("Null Testing\n");
+        group7.print_popcapcity_world(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkCaptialCityWorldArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.print_popcapcity_world(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 21
+    @Test
+    void checkCapitalCityContinent_Null(){
+        System.out.println("Null Testing\n");
+        group7.printpopCapcityContinent(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkCaptialCityContinentArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.printpopCapcityContinent(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 22
+    @Test
+    void checkCapitalCityRegion_Null(){
+        System.out.println("Null Testing\n");
+        group7.print_popcapcity_Region(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkCaptialCityRegionArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.print_popcapcity_Region(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+
+    //Function 24
+    @Test
+    void checkPopWorld_Null(){
+        System.out.println("Null Testing\n");
+        group7.printallPopulationWorld(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkPopWorldArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<Long> cty = new ArrayList<Long>();
+        cty.add(null);
+        group7.printallPopulationWorld(cty);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 25
+    @Test
+    void checkPopContinent_Null(){
+        System.out.println("Null Testing\n");
+        group7.printallPopulationContinent(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkPopContinentArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<Country> Cities = new ArrayList<Country>();
+        Cities.add(null);
+        group7.printallPopulationContinent(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 26
+    @Test
+    void checkPopRegion_Null(){
+        System.out.println("Null Testing\n");
+        group7.printallPopulationRegion(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkPopRegionArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<Country> Cities = new ArrayList<Country>();
+        Cities.add(null);
+        group7.printallPopulationRegion(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 27
+    @Test
+    void checkPopCountry_Null(){
+        System.out.println("Null Testing\n");
+        group7.printallPopulationCountry(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkPopCountryArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.printallPopulationCountry(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 28
+    @Test
+    void checkPopDistrict_Null(){
+        System.out.println("Null Testing\n");
+        group7.printallPopulationDistrict(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkPopDistrictArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.printallPopulationDistrict(Cities);
+        System.out.println("\n-----*****------*****--------");
+    }
+
+    //Function 29
+    @Test
+    void checkPopCity_Null(){
+        System.out.println("Null Testing\n");
+        group7.printallPopulationCity(null);
+        System.out.println("\n-----*****------*****--------");
+    }
+    @Test
+    void checkPopCityArray_Null(){
+        System.out.println("ArrayList Null Testing\n");
+        ArrayList<City> Cities = new ArrayList<City>();
+        Cities.add(null);
+        group7.printallPopulationCity(Cities);
         System.out.println("\n-----*****------*****--------");
     }
 }

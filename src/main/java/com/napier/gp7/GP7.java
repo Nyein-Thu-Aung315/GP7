@@ -1,9 +1,7 @@
 package com.napier.gp7;
 //import sql Package
-import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
-import java.math.*;
 
 public class GP7
 {
@@ -154,6 +152,43 @@ public class GP7
         ArrayList<City> popcapcity_Region = a.popcapcity_Region();
         a.print_popcapcity_Region(popcapcity_Region);
 
+        a.peopleListContinent();
+
+        //All Population in the world
+        System.out.println("\n");
+        System.out.println("All Population in the world");
+        ArrayList<Long> allPopWorld = a.allPopulationWorld();
+        a.printallPopulationWorld(allPopWorld);
+
+        //All Population in the world
+        System.out.println("\n");
+        System.out.println("All Population in the Continent");
+        ArrayList<Country> allContinent = a.allPopulationContinent();
+        a.printallPopulationContinent(allContinent);
+
+        //All Population in the Region
+        System.out.println("\n");
+        System.out.println("All Population in the Region");
+        ArrayList<Country> allRegion = a.allPopulationRegion();
+        a.printallPopulationRegion(allRegion);
+
+        //All Population in the Country
+        System.out.println("\n");
+        System.out.println("All Population in the Countries");
+        ArrayList<City> allCountry = a.allPopulationCountry();
+        a.printallPopulationCountry(allCountry);
+
+        //All Population in the District
+        System.out.println("\n");
+        System.out.println("All Population in the District");
+        ArrayList<City> allDistrict = a.allPopulationDistrict();
+        a.printallPopulationDistrict(allDistrict);
+
+        //All Population in the City
+        System.out.println("\n");
+        System.out.println("All Population in the City");
+        ArrayList<City> allCity = a.allPopulationCity();
+        a.printallPopulationCity(allCity);
 
         // ArrayList<Country> peopleList = a.peopleListCountry();
 //        a.printPeopleListCountry(peopleList);
@@ -1361,5 +1396,350 @@ public class GP7
 //            System.out.println(emp_string);
 //        }
 //    }
+    //End
+    //    Function 23
+    public void peopleListContinent(){
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String conPeopleList = "SELECT Continent, SUM(Population) as PopulationSum from country Group By Continent";
+
+            // Execute SQL statement
+            ResultSet rset1 = stmt.executeQuery(conPeopleList);
+            // Extract employee information
+            ArrayList<Country> City = new ArrayList<Country>();
+
+            while (rset1.next())
+            {
+                Country cty = new Country();
+                cty.setCtyPopulation(rset1.getLong("PopulationSum"));
+                cty.setContinent(rset1.getString("Continent"));
+                System.out.println("Population of Country in "+cty.getContinent()+" Continent: "+cty.getCtyPopulation());
+                City.add(cty);
+            }
+
+            //Result set 3
+            for(Country con : City) {
+                String conName = con.getContinent();
+                long continentPop = con.getCtyPopulation();
+                long cityPop = new Long("0");
+                long livPop = new Long("0");
+                long notlivPop = new Long("0");
+                String countryCode = "SELECT Code from country Where Continent='" + conName + "'";
+                ResultSet rset3 = stmt.executeQuery(countryCode);
+                while (rset3.next()) {
+                    com.napier.gp7.Country country = new Country();
+                    country.setCode(rset3.getString("Code"));
+                    String ctyPeopleList = "SELECT Population from city where CountryCode = '" + country.getCode() + "'";
+                    long cityPop1 = livingCityPop(ctyPeopleList);
+                    cityPop = Long.sum(cityPop,cityPop1);
+
+                }
+                System.out.println("\n");
+                System.out.println("Continent Name: "+conName);
+                System.out.println("Living in city: "+cityPop);
+                System.out.println("No living in city: "+Math.subtractExact(continentPop, cityPop));
+
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+        }
+    }
+    public Long livingCityPop(String query){
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(query);
+            long livingPop = new Long("0");
+            while (rset.next())
+            {
+                City city = new City();
+                livingPop = rset.getLong("Population");
+            }
+            return livingPop;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    //End
+
+    //Function 24
+    public ArrayList<Long> allPopulationWorld()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "Select SUM(Population) as SumPop From country GROUP By Continent";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<Long> City = new ArrayList<Long>();
+            while (rset.next())
+            {
+                Country city = new Country();
+                city.setCtyPopulation(rset.getLong("SumPop"));
+                City.add(city.getCtyPopulation());
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void printallPopulationWorld(ArrayList<Long> City1)
+    {
+        //Check null
+        if(City1 == null){
+            System.out.println("No City List information in Region");
+            return;
+        }
+        Long allPopWorld = new Long("0");
+        // Print header
+        // Loop over all employees in the list
+        for (Long emp : City1) {
+            if (emp == null)
+                continue;
+            Long allPop = emp;
+            allPopWorld = Long.sum(allPopWorld,allPop);
+
+        }
+        System.out.println("Total Population in the World: "+allPopWorld);
+    }
+    //End
+
+    //Function 25
+    public ArrayList<Country> allPopulationContinent()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "Select SUM(Population) as SumPop, Continent From country GROUP By Continent";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<Country> City = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country city = new Country();
+                city.setCtyPopulation(rset.getLong("SumPop"));
+                city.setContinent(rset.getString("Continent"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void printallPopulationContinent(ArrayList<Country> City1)
+    {
+        //Check null
+        if(City1 == null){
+            System.out.println("No City List information in Region");
+            return;
+        }
+        // Print header
+        // Loop over all employees in the list
+        for (Country emp : City1) {
+            if (emp == null)
+                continue;
+            System.out.println("Total Population of "+emp.getContinent()+" Continent: "+emp.getCtyPopulation());
+        }
+
+    }
+    //End
+
+    //Function 26
+    public ArrayList<Country> allPopulationRegion()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "Select SUM(Population) as SumPop, Region From country GROUP By Region";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<Country> City = new ArrayList<Country>();
+            while (rset.next())
+            {
+                Country city = new Country();
+                city.setCtyPopulation(rset.getLong("SumPop"));
+                city.setRegion(rset.getString("Region"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void printallPopulationRegion(ArrayList<Country> City1)
+    {
+        //Check null
+        if(City1 == null){
+            System.out.println("No Population information in Region");
+            return;
+        }
+        // Print header
+        // Loop over all employees in the list
+        for (Country emp : City1) {
+            if (emp == null)
+                continue;
+            System.out.println("Total Population of "+emp.getRegion()+" Region: "+emp.getCtyPopulation());
+        }
+
+    }
+    //End
+
+    //Function 27
+    public ArrayList<City> allPopulationCountry()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "Select SUM(Population) as SumPop, CountryCode From city GROUP By CountryCode";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<City> City = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+                city.setCtyPopulation(rset.getLong("SumPop"));
+                city.setCountry(rset.getString("CountryCode"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void printallPopulationCountry(ArrayList<City> City1)
+    {
+        //Check null
+        if(City1 == null){
+            System.out.println("No Population information in Country");
+            return;
+        }
+        // Print header
+        // Loop over all employees in the list
+        for (City emp : City1) {
+            if (emp == null)
+                continue;
+            System.out.println("Total Population of "+emp.getCountry()+" CountryCode: "+emp.getCtyPopulation());
+        }
+
+    }
+    //End
+
+    //Function 28
+    public ArrayList<City> allPopulationDistrict()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "Select SUM(Population) as SumPop, District From city GROUP By District";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<City> City = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+                city.setCtyPopulation(rset.getLong("SumPop"));
+                city.setDistrict(rset.getString("District"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void printallPopulationDistrict(ArrayList<City> City1)
+    {
+        //Check null
+        if(City1 == null){
+            System.out.println("No Population information in District");
+            return;
+        }
+        // Print header
+        // Loop over all employees in the list
+        for (City emp : City1) {
+            if (emp == null)
+                continue;
+            System.out.println("Total Population of "+emp.getDistrict()+" District: "+emp.getCtyPopulation());
+        }
+
+    }
+    //End
+
+    //Function 28
+    public ArrayList<City> allPopulationCity()
+    {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String regionlist = "Select Population as SumPop, Name From city";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(regionlist);
+            // Extract employee information
+            ArrayList<City> City = new ArrayList<City>();
+            while (rset.next())
+            {
+                City city = new City();
+                city.setCtyPopulation(rset.getLong("SumPop"));
+                city.setName(rset.getString("Name"));
+                City.add(city);
+            }
+            return City;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Fail to print Country list");
+            return null;
+        }
+    }
+    public void printallPopulationCity(ArrayList<City> City1)
+    {
+        //Check null
+        if(City1 == null){
+            System.out.println("No Population information in City");
+            return;
+        }
+        // Print header
+        // Loop over all employees in the list
+        for (City emp : City1) {
+            if (emp == null)
+                continue;
+            System.out.println("Total Population of "+emp.getName()+" City: "+emp.getCtyPopulation());
+        }
+
+    }
     //End
 }

@@ -34,8 +34,12 @@ A request for world population information is sent to organization.
 5. Can see the top N populated capital cities in the continent where N is provided by the user.
 6. Can see the top N populated capital cities in the region where N is provided by the user
 7. Can see the population of people, people living in cities, and people not living in cities in each continent.
-8. Can see the population of people, people living in cities, and people not living in cities in each region.
-9. Can see the population of people, people living in cities, and people not living in cities in each country.
+8. Can see the Total Population of the World.
+9. Can see the Total Population of the Continent.
+10. Can see the Total Population of the Region.
+11. Can see the Total Population of the Country.
+12. Can see the Total Population of the District.
+13. Can see the Total Population of the City.
 ###Extension
 Role does not exists.
 

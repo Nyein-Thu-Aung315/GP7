@@ -72,11 +72,17 @@ rectangle "World Population" {
     usecase UC23 as "Display The population of people, people
         living in cities, and people not living in cities in each continent."
 
-    usecase UC24 as "Display The population of people, people
-        living in cities, and people not living in cities in each region."
+    usecase UC24 as "Display The Total Population of the World."
 
-    usecase UC25 as "Display The population of people, people
-        living in cities, and people not living in cities in each country."
+    usecase UC25 as "Display The Total Population of the Continent."
+
+    usecase UC26 as "Display The Total Population of the Region."
+
+    usecase UC27 as "Display The Total Population of the Country."
+
+    usecase UC28 as "Display The Total Population of the District."
+
+    usecase UC29 as "Display The Total Population of the City."
 
     User ---> UC1
     User ---> UC2
@@ -103,6 +109,11 @@ rectangle "World Population" {
     User ---> UC23
     User ---> UC24
     User ---> UC25
+    User ---> UC26
+    User ---> UC27
+    User ---> UC28
+    User ---> UC29
+
 
 }
 
