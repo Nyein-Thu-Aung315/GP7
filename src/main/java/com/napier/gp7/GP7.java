@@ -24,155 +24,155 @@ public class GP7<Decimal>
         }
 
         //Print The list of Country Order by DESC
-        System.out.println("Country list in World order by largest population to smallest");
+        System.out.println("1. Country list in World order by largest population to smallest");
         System.out.println("***************************************************************");
         ArrayList<Country> country = a.CountryDESC();
         a.printCountryDEST(country);
 
         //Print the list of country order by DESC that exist in a Asia
         System.out.println("\n");
-        System.out.println("Country list in Asia order by largest population to smallest");
+        System.out.println("2. Country list in Asia order by largest population to smallest");
         System.out.println("***************************************************************");
         ArrayList<Country> continent = a.continent_countryDESC();
         a.prin_countrylist_continent(continent);
 
         //Print the list of country order by DESC that exist in a SouthEast Asia Region
         System.out.println("\n");
-        System.out.println("Country list in SouthEast Asia order by largest population to smallest");
+        System.out.println("3. Country list in SouthEast Asia order by largest population to smallest");
         System.out.println("***********************************************************************");
         ArrayList<Country> clist_region = a.Regoin_CountryDESC();
         a.prin_countrylist_region(clist_region);
 
         //Print Top 10 populated countries in the world
         System.out.println("\n");
-        System.out.println("Top 10 Populated countries in the world");
+        System.out.println("4. Top 10 Populated countries in the world");
         System.out.println("******************************************");
         ArrayList<Country> popcnty_world = a.mostpopcnty_world();
         a.prin_countrylist_region(popcnty_world);
 
         //Print Top 10 populated countries in Europe
         System.out.println("\n");
-        System.out.println("Top 10 Populated countries in Europe");
+        System.out.println("5. Top 10 Populated countries in Europe");
         System.out.println("**************************************");
         ArrayList<Country> popcnty_continent = a.mostpopcnty_continent();
         a.prin_countrylist_continent(popcnty_continent);
 
         //Print the list of cities order by DESC that exist in a SouthEast Asia Region
         System.out.println("\n");
-        System.out.println("Top 10 Populated countries in North America Region");
+        System.out.println("6. Top 10 Populated countries in North America Region");
         System.out.println("****************************************************");
         ArrayList<Country> popcity = a.popcity_world();
         a.print_popcity_world(popcity);
 
         //Print Top 10 populated countries in Europe
         System.out.println("\n");
-        System.out.println("City list in the world order by largest population to smallest");
+        System.out.println("7. City list in the world order by largest population to smallest");
         System.out.println("***************************************************************");
         ArrayList<City> popcnty_region = a.mostpopcnty_region();
         a.prin_popcnty_region(popcnty_region);
 
         //Print Top 10 populated countries in Europe
         System.out.println("\n");
-        System.out.println("City list in Asia order by largest population to smallest");
+        System.out.println("8. City list in Asia order by largest population to smallest");
         System.out.println("***************************************************************");
         ArrayList<City> popcity_continent = a.popcity_continent();
         a.print_popcity_continent(popcity_continent);
 
         //Print populated countries in China
         System.out.println("\n");
-        System.out.println("City list in China order by largest population to smallest");
+        System.out.println("9. City list in China order by largest population to smallest");
         System.out.println("***************************************************************");
         ArrayList<City> popcity_country = a.pcity_Country();
         a.print_popucitylist_region(popcity_country);
 
         //Print populated countries in Eastern Asia
         System.out.println("\n");
-        System.out.println("City list in Eastern Asia order by largest population to smallest");
+        System.out.println("10. City list in Eastern Asia order by largest population to smallest");
         System.out.println("***************************************************************");
         ArrayList<City> popcity_region = a.pcity_region();
         a.print_popucitylist_Country(popcity_region);
 
         //Print populated countries in a District
         System.out.println("\n");
-        System.out.println("City list in a district order by largest population to smallest");
+        System.out.println("11. City list in a district order by largest population to smallest");
         System.out.println("***************************************************************");
         ArrayList<City> popcity_district = a.pcity_district();
         a.print_popucitylist_district(popcity_district);
 
         //Print populated countries in a World
         System.out.println("\n");
-        System.out.println("Top 10 populated cities in the world");
+        System.out.println("12. Top 10 populated cities in the world");
         System.out.println("***************************************");
-        ArrayList<City> popcity_world = a.pcitylist_world();
-        a.print_popucitylist_world(popcity_world);
+        ArrayList<City> popcity_world1 = a.pcitylist_world();
+        a.print_popucitylist_world(popcity_world1);
 
 
         //Print Top 10 populated cities in the continent
         System.out.println("\n");
-        System.out.println("Top 10 Populated cities in the continent");
+        System.out.println("13. Top 10 Populated cities in the continent");
         System.out.println("******************************************");
         ArrayList<City> popcity_continent1= a.mostpopcity_world();
         a.print_populationcity_continent(popcity_continent1);
 
         //Print Top 10 populated cities in a region
         System.out.println("\n");
-        System.out.println("Top 10 Populated cities in the region");
+        System.out.println("14. Top 10 Populated cities in the region");
         System.out.println("********************************************");
         ArrayList<City> pcity_world = a.pcity_world();
         a.print_populationcity_region(pcity_world);
 
         //Print Top 10 populated cities in a country
         System.out.println("\n");
-        System.out.println("Top 10 Populated cities in Burmese country");
+        System.out.println("15. Top 10 Populated cities in Burmese country");
         System.out.println("**************************************************");
         ArrayList<City> popcitylistcountry = a.pop_city_country();
         a.print_populationcity_country(popcitylistcountry);
 
         //Print Top 10 populated cities in a district
         System.out.println("\n");
-        System.out.println("Top 10 Populated cities in Liaoning District");
+        System.out.println("16. Top 10 Populated cities in Liaoning District");
         System.out.println("**************************************************");
         ArrayList<City> popcitylistdistrict = a.pop_city_district();
         a.print_populationcity_District(popcitylistdistrict);
 
         //Print Population of CapitalCity in the world
         System.out.println("\n");
-        System.out.println("Population of Capital Cities in the world");
+        System.out.println("17. Population of Capital Cities in the world");
         System.out.println("**************************************************");
         ArrayList<City> capitalCtyWorld = a.capitalCityWorld();
         a.printCapitalcityWorld(capitalCtyWorld);
 
         //Print Population of CapitalCity in the Region
         System.out.println("\n");
-        System.out.println("Population of Capital Cities in the Region");
+        System.out.println("18. Population of Capital Cities in the Region");
         System.out.println("**************************************************");
         ArrayList<City> capCtyRegion = a.capCityRegion();
         a.printCapcityRegion(capCtyRegion);
 
        //Print Population of CapitalCity in the Continent
        System.out.println("\n");
-       System.out.println("Population of Capital Cities in the Continent");
+       System.out.println("19. Population of Capital Cities in the Continent");
         System.out.println("**************************************************");
        ArrayList<City> capCtyContinent = a.capCityContinent();
        a.printCapcityContinent(capCtyContinent);
 
         //Print populated capital cities in a World
         System.out.println("\n");
-        System.out.println("Top 10 populated Capitical Cities in the world");
+        System.out.println("20. Top 10 populated Capitical Cities in the world");
         System.out.println("**************************************************");
         ArrayList<City> popcapcity_world = a.popcapcity_world();
         a.print_popcapcity_world(popcapcity_world);
 
         //Print populate capital cities in the continent
         System.out.println("\n");
-        System.out.println("Top 10 populated Capitical Cities in the Continent");
+        System.out.println("21. Top 10 populated Capitical Cities in the Continent");
         System.out.println("**************************************************");
         ArrayList<City> popcapCtyContinent = a.popcapCityContinent();
         a.printpopCapcityContinent(popcapCtyContinent);
 
         //Print populated capital cities in a Region
         System.out.println("\n");
-        System.out.println("Top 10 populated Capitical Cities in the Region");
+        System.out.println("22. Top 10 populated Capitical Cities in the Region");
         System.out.println("***********************************************");
         ArrayList<City> popcapcity_Region = a.popcapcity_Region();
         a.print_popcapcity_Region(popcapcity_Region);
@@ -181,49 +181,49 @@ public class GP7<Decimal>
 
         //All Population in the world
         System.out.println("\n");
-        System.out.println("All Population in the world");
+        System.out.println("23. All Population in the world");
         System.out.println("*********************************");
         ArrayList<Long> allPopWorld = a.allPopulationWorld();
         a.printallPopulationWorld(allPopWorld);
 
         //All Population in the world
         System.out.println("\n");
-        System.out.println("All Population in the Continent");
+        System.out.println("24. All Population in the Continent");
         System.out.println("*********************************");
         ArrayList<Country> allContinent = a.allPopulationContinent();
         a.printallPopulationContinent(allContinent);
 
         //All Population in the Region
         System.out.println("\n");
-        System.out.println("All Population in the Region");
+        System.out.println("25. All Population in the Region");
         System.out.println("*********************************");
         ArrayList<Country> allRegion = a.allPopulationRegion();
         a.printallPopulationRegion(allRegion);
 
         //All Population in the Country
         System.out.println("\n");
-        System.out.println("All Population in the Countries");
+        System.out.println("26. All Population in the Countries");
         System.out.println("*********************************");
         ArrayList<City> allCountry = a.allPopulationCountry();
         a.printallPopulationCountry(allCountry);
 
         //All Population in the District
         System.out.println("\n");
-        System.out.println("All Population in the District");
+        System.out.println("27. All Population in the District");
         System.out.println("********************************");
         ArrayList<City> allDistrict = a.allPopulationDistrict();
         a.printallPopulationDistrict(allDistrict);
 
         //All Population in the City
         System.out.println("\n");
-        System.out.println("All Population in the City");
+        System.out.println("28. All Population in the City");
         System.out.println("****************************");
         ArrayList<City> allCity = a.allPopulationCity();
         a.printallPopulationCity(allCity);
 
         //Language percentage
         System.out.println("\n");
-        System.out.println("Percentage of Using language in the world");
+        System.out.println("29. Percentage of Using language in the world");
         System.out.println("******************************************");
         ArrayList<Language> languages = a.languageWorld();
         ArrayList<Long> totalp = a.allPopulationWorld();
@@ -232,14 +232,14 @@ public class GP7<Decimal>
 
         //All Population in the City
         System.out.println("\n");
-        System.out.println("Living and Non Living population in each Country");
+        System.out.println("30. Living and Non Living population in each Country");
         System.out.println("*************************************************");
         ArrayList<Country> lpop = a.livingNonLivngCountry();
         a.printallivingNonLivngCountry(lpop);
 
         //All Population in the City
         System.out.println("\n");
-        System.out.println("Living and Non Living population in each region");
+        System.out.println("31. Living and Non Living population in each region");
         System.out.println("************************************************");
         ArrayList<Country> lpop1 = a.livingNonLivngRegion();
         a.printallivingNonLivngRegion(lpop1);
@@ -1988,7 +1988,6 @@ public class GP7<Decimal>
                 Double Total= emp.getTotal();
                 Double hundread = 100.0;
                 Double Percentage = Total*hundread/allPopWorld;
-                BigInteger P= new BigInteger(String.valueOf(Double.valueOf(Percentage)));
                 System.out.println(emp.getLanguage()+": "+Percentage);
 
         }
