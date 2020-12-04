@@ -177,8 +177,6 @@ public class GP7<Decimal>
         ArrayList<City> popcapcity_Region = a.popcapcity_Region();
         a.print_popcapcity_Region(popcapcity_Region);
 
-        a.peopleListContinent();
-
         //All Population in the world
         System.out.println("\n");
         System.out.println("23. All Population in the world");
@@ -243,6 +241,12 @@ public class GP7<Decimal>
         System.out.println("************************************************");
         ArrayList<Country> lpop1 = a.livingNonLivngRegion();
         a.printallivingNonLivngRegion(lpop1);
+
+        //Print Living and Non Living population in each continent
+        System.out.println("\n");
+        System.out.println("32. Living and Non Living population in each continent");
+        System.out.println("*********************************");
+        a.peopleListContinent();
 
         // ArrayList<Country> peopleList = a.peopleListCountry();
 //        a.printPeopleListCountry(peopleList);
@@ -1752,7 +1756,7 @@ public class GP7<Decimal>
     }
     //End
 
-    //Function 28
+    //Function 29
     public ArrayList<City> allPopulationCity()
     {
         try
@@ -1796,7 +1800,8 @@ public class GP7<Decimal>
 
     }
     //End
-    //function 29
+
+    //function 30
     public ArrayList<Country> livingNonLivngCountry()
     {
         try
@@ -1847,7 +1852,7 @@ public class GP7<Decimal>
     }
     //End
 
-    //function 29
+    //function 31
     public ArrayList<Country> livingNonLivngRegion()
     {
         try
@@ -1898,7 +1903,7 @@ public class GP7<Decimal>
     }
     //End
 
-    //function29
+    //function 32
     public ArrayList<Language> languageWorld()
     {
         try
@@ -1988,7 +1993,7 @@ public class GP7<Decimal>
                 Double Total= emp.getTotal();
                 Double hundread = 100.0;
                 Double Percentage = Total*hundread/allPopWorld;
-                System.out.println(emp.getLanguage()+": "+Percentage);
+                System.out.println(emp.getLanguage()+": "+Percentage+"%");
 
         }
 
