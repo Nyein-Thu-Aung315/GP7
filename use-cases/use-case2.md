@@ -40,8 +40,9 @@ A request for world population information is sent to organization.
 11. Can see the Total Population of the Country.
 12. Can see the Total Population of the District.
 13. Can see the Total Population of the City.
+
 ###Extension
-Role does not exists.
+1 Role does not exists.
 
 ###SUB-VARIATIONS
 None.
