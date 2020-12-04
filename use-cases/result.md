@@ -1,0 +1,18 @@
+| ID | Name | Met | Screenshot |
+| ------- | ----------- | ------- | ----------- |
+| 1 | All the countries in the world organised by largest population to smallest. | Yes | ![Population](../images/1.png)
+| 2 | All the countries in a continent organised by largest population to smallest. | Yes | ![Population](../images/2.png)
+| 3 | All the countries in a region organised by largest population to smallest. | Yes | ![Population](../images/3.png)
+| 4 | All the cities in a region organised by largest population to smallest. | Yes | ![Population](../images/4.png)
+| 5 | All the cities in a district organised by largest population to smallest. | Yes | ![Population](../images/5.png)
+| 6 | The top N populated cities in the world where N is provided by the user. | Yes | ![Population](../images/6.png)
+| 7 | The top N populated cities in a continent where N is provided by the user. | Yes | ![Population](../images/7.png)
+| 8 | The top N populated cities in a region where N is provided by the user. | Yes | ![Population](../images/8.png)
+| 9 | The top N populated cities in a country where N is provided by the user. | Yes | ![Population](../images/9.png)
+| 10 | The top N populated cities in a district where N is provided by the user. | Yes | ![Population](../images/10.png)
+| 11 | All the capital cities in the world organised by largest population to smallest. | Yes | ![Population](../images/11.png)
+| 12 | All the capital cities in a region organised by largest to smallest. | Yes | ![Population](../images/12.png)
+| 13 | All the capital cities in a continent organised by largest population to smallest. | Yes | ![Population](../images/13.png)
+| 14 | The top N populated capital cities in the world where N is provided by the user. | Yes | ![Population](../images/14.png)
+| 15 | The top N populated capital cities in a continent where N is provided by the user. | Yes | ![Population](../images/15.png)
+| 16 | The top N populated capital cities in a region where N is provided by the user. | Yes | ![Population](../images/16.png)
