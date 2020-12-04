@@ -84,6 +84,15 @@ rectangle "World Population" {
 
     usecase UC29 as "Display The Total Population of the City."
 
+    usecase UC30 as "Display The population of people, people living in cities,
+    and people not living in cities in each region."
+
+    usecase UC31 as "Display The population of people, people living in cities,
+    and people not living in cities in each country."
+
+    usecase UC32 as "Display Percentage of Using language in the world"
+
+
     User ---> UC1
     User ---> UC2
     User ---> UC3
@@ -113,6 +122,10 @@ rectangle "World Population" {
     User ---> UC27
     User ---> UC28
     User ---> UC29
+    User ---> UC30
+    User ---> UC31
+    User ---> UC32
+
 
 
 }
