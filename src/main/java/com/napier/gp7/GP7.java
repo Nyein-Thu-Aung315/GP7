@@ -1988,8 +1988,8 @@ public class GP7<Decimal>
                 Double Total= emp.getTotal();
                 Double hundread = 100.0;
                 Double Percentage = Total*hundread/allPopWorld;
-                BigInteger P= new BigInteger(String.valueOf(Double.valueOf(Percentage)));
-                System.out.println(emp.getLanguage()+": "+Percentage);
+               // BigInteger P= new BigInteger(String.valueOf(Double.valueOf(Percentage)));
+                System.out.println(emp.getLanguage()+": "+Percentage+"%");
 
         }
 
